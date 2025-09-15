@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>KawaiiGF — PWA</title>
+  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="KawaiiGF">
+  <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <a href="https://kawaigf.com" target="_blank" class="logo"><span>kawaigf.com</span></a>
+        <h1>KawaiiGF <span class="pill">DEMO</span></h1>
+      </div>
+    </header>
+
+    <div class="deck" id="deck">
+      <div class="hint">Glisse à gauche ❌ / droite ✅</div>
+    </div>
+
+    <div class="controls">
+      <button class="btn nope" id="btnNope">❌</button>
+      <button class="btn like" id="btnLike">❤️</button>
+    </div>
+
+    <div class="footer">Demo — Profils & images libres (Pixabay). Logo « kawaigf.com »</div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js").catch(console.error);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body{margin:0;font-family:Poppins, sans-serif;background:#fff0f6;}
+.app{max-width:430px;margin:0 auto;height:100%;display:flex;flex-direction:column;}
+.deck{position:relative;flex:1;display:flex;align-items:center;justify-content:center;padding:16px;}
+.card{position:absolute;width:clamp(290px,92vw,380px);height:min(68vh,560px);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 18px 40px rgba(236,72,153,.35);transition:transform .25s ease;}
+.card .photo{position:absolute;inset:0;}
+.card .photo img{width:100%;height:100%;object-fit:cover;}
+.card .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.3) 80%);}
+.card .meta{position:absolute;left:12px;right:12px;bottom:12px;padding:10px;background:rgba(255,255,255,.4);backdrop-filter:blur(6px);border-radius:14px;}
+.name{font-weight:800;font-size:18px;}
+.badge{position:absolute;top:12px;padding:6px 12px;border-radius:10px;font-weight:800;color:#fff;opacity:0;}
+.badge.like{left:12px;background:#22c55e;}
+.badge.nope{right:12px;background:#ef4444;}
+.controls{display:flex;justify-content:center;gap:16px;padding:16px;}
+.btn{width:60px;height:60px;border-radius:50%;font-size:24px;border:none;cursor:pointer;}
+.btn.like{background:#ec4899;color:#fff;}
+.btn.nope{background:#ef4444;color:#fff;}
+.hint{position:absolute;bottom:90px;left:50%;transform:translateX(-50%);background:#fff;padding:6px 12px;border-radius:10px;font-size:12px;color:#831843;}
