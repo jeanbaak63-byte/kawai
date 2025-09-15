@@ -9,7 +9,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="KawaiiGF">
   <link rel="apple-touch-icon" href="icon-192.png">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=14">
   <script>
     (function(){
       function setVH(){ document.documentElement.style.setProperty('--vh', (window.innerHeight*0.01) + 'px'); }
@@ -18,13 +18,9 @@
   </script>
 </head>
 <body>
-  <div class="app">
-    <header>
-      <a href="https://kawaigf.com" class="logo" target="_blank" rel="noopener" aria-label="kawaigf.com">
-        <span>kawaigf.com</span>
-      </a>
-    </header>
+  <a href="https://kawaigf.com" class="logo-floating" target="_blank" rel="noopener" aria-label="kawaigf.com">kawaigf.com</a>
 
+  <div class="app">
     <main class="deck" id="deck" aria-live="polite">
       <div class="hint">Glisse à gauche ❌ / droite ✅</div>
     </main>
@@ -35,7 +31,7 @@
     </div>
   </div>
 
-  <script src="app.js?v=13"></script>
+  <script src="app.js?v=14"></script>
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("sw.js").catch(console.error);
