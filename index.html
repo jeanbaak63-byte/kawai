@@ -4,35 +4,41 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>KawaiiGF — PWA</title>
-  <link rel="stylesheet" href="style.css?v=7">
   <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="KawaiiGF">
   <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css?v=9">
+  <script>
+    (function(){
+      function setVH(){ document.documentElement.style.setProperty('--vh', (window.innerHeight*0.01) + 'px'); }
+      setVH(); window.addEventListener('resize', setVH); window.addEventListener('orientationchange', setVH);
+    })();
+  </script>
 </head>
 <body>
   <div class="app">
     <header>
       <div class="brand">
-        <a href="https://kawaigf.com" target="_blank" class="logo"><span>kawaigf.com</span></a>
+        <a href="https://kawaigf.com" class="logo" target="_blank" rel="noopener">kawaigf.com</a>
         <h1>KawaiiGF <span class="pill">DEMO</span></h1>
       </div>
     </header>
 
-    <div class="deck" id="deck">
+    <main class="deck" id="deck" aria-live="polite">
       <div class="hint">Glisse à gauche ❌ / droite ✅</div>
-    </div>
+    </main>
 
     <div class="controls">
-      <button class="btn nope" id="btnNope">❌</button>
-      <button class="btn like" id="btnLike">❤️</button>
+      <button class="btn nope" id="btnNope" aria-label="Nope">❌</button>
+      <button class="btn like" id="btnLike" aria-label="Like">❤️</button>
     </div>
 
-    <div class="footer">Demo — Profils & images libres (Pixabay). Logo « kawaigf.com »</div>
+    <footer class="footer">Demo — Profils & images libres (Pixabay). Logo « kawaigf.com »</footer>
   </div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=9"></script>
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("sw.js").catch(console.error);
