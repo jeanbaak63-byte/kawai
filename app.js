@@ -1,7 +1,6 @@
 const profiles = [
-  { name:"Aiko", age:19, image:"https://cdn.pixabay.com/photo/2024/09/21/10/53/anime-9063542_640.png", desc:"Rêveuse tombée des étoiles. Cherche duo chill pour dramas rom-com.", tags:["catgirl","genki","vtuber"] },
-  { name:"Miyu", age:22, image:"https://cdn.pixabay.com/photo/2024/07/08/05/41/girl-8880144_640.png", desc:"Gamer nocturne. Café + ranked = ❤️", tags:["tsundere","gamer","idol"] },
-  { name:"Hana", age:20, image:"https://cdn.pixabay.com/photo/2023/12/07/11/04/girl-8435329_640.png", desc:"Cosplayeuse lunaire, vibes pastel & isekai.", tags:["cosplay","pink","isekai"] },
+  { name:"Aiko", age:19, image:"https://cdn.pixabay.com/photo/2024/09/21/10/53/anime-9063542_640.png", desc:"Rêveuse tombée des étoiles." },
+  { name:"Hana", age:20, image:"https://cdn.pixabay.com/photo/2023/12/07/11/04/girl-8435329_640.png", desc:"Cosplayeuse lunaire." }
 ];
 
 let deckIndex = 0;
@@ -9,7 +8,6 @@ const stack=[];
 const deckEl=document.getElementById('deck');
 
 function createCard(p){
-  const chips = p.tags?.length ? `<div class="chips">${p.tags.map(t=>`<span class="chip">#${t}</span>`).join('')}</div>` : "";
   const el=document.createElement('div'); el.className='card'; el.dataset.name=p.name;
   el.innerHTML=`
     <div class="photo"><img src="${p.image}" alt="${p.name}"></div>
@@ -18,10 +16,8 @@ function createCard(p){
     <div class="badge nope">NOPE</div>
     <div class="meta">
       <div class="name">${p.name}, ${p.age}</div>
-      <div class="tag">${p.desc}</div>
-      ${chips}
-    </div>
-  `;
+      <div class="desc">${p.desc}</div>
+    </div>`;
 
   const likeBadge = el.querySelector('.badge.like');
   const nopeBadge = el.querySelector('.badge.nope');
@@ -88,7 +84,4 @@ function nextCard(){
   const p=profiles[deckIndex++], c=createCard(p);
   stack.push(c); deckEl.appendChild(c);
 }
-nextCard(); nextCard(); nextCard();
-
-document.getElementById('btnLike').onclick=()=>{ const top=stack[stack.length-1]; if(top) doSwipe(top,'right'); };
-document.getElementById('btnNope').onclick=()=>{ const top=stack[stack.length-1]; if(top) doSwipe(top,'left'); };
+nextCard(); nextCard();
